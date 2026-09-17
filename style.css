@@ -1,0 +1,239 @@
+@font-face {
+            font-family: 'Abar';
+            src: url('./fonts/Abar-VF.woff2') format('woff2 supports variations'),
+                 url('./fonts/Abar-VF.woff2') format('woff2-variations');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+:root {
+    --text-primary: rgb(32, 33, 36);
+    --text-secondary: rgb(95, 99, 104);
+    --background: rgb(245, 246, 248);
+    --background-secondary: rgb(235, 237, 240);
+    --border: rgb(218, 220, 224);
+    --border-hover: rgb(200, 203, 208);
+
+    --radius: 10px;
+    
+    --blue: rgb(59 130 246);
+    --blue-background: rgb(59 130 246/.1);
+    --blue-border: rgb(59 130 246/.4);
+
+    --yellow: rgb(245 158 11/var(--tw-text-opacity,1));
+    --green: rgb(16 185 129/var(--tw-text-opacity,1));
+    --leftright: 0 10px;
+}
+
+.hide {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: "Abar", Arial;
+    font-weight: 400;
+    background-color: var(--background);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+    padding: 6px;
+    overflow: hidden;
+    
+}
+
+.topBar {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 5%;
+    height: 5%;
+    width: 100%;
+    max-width: 600px;
+
+    background-color: var(--background-secondary);
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    display: flex;
+    padding: var(--leftright);
+    align-items: center;
+}
+
+
+.logo {
+    display: flex;
+    height: 100%;
+    margin-right: auto;
+    padding: 7px;
+}
+
+.logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.modelContain {
+    width: 100%;
+    max-width: 600px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 70%;
+    flex-grow: 1;
+    
+}
+
+.model {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--background-secondary);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+.model2 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--background-secondary);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.load {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 45%;
+    align-items: center;
+}
+
+.buttons button {
+    
+    border-radius: var(--radius);
+    padding: 10px;
+    font-family: inherit;
+    
+    display: flex;
+    gap: 5px;
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+}
+
+button i {
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    border-color: var(--border-hover);
+}
+
+button:active {
+    transform: scale(0.99,0.99)
+}
+
+.chngModel {
+    background-color: var(--blue-background);
+    color: var(--blue);
+    border: 1px solid var(--blue-border);
+    font-weight: 500;
+}
+.reset {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    font-weight: 500;
+}
+
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.guide {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px dashed var(--border);
+    width: 100%;
+    border-radius: var(--radius);
+    padding: var(--leftright);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.secondpanel {
+    display: flex;
+    gap: 5px;
+   
+}
+
+.info {
+    flex-basis: 55%;
+    background-color: var(--background);
+    border-radius: var(--radius);
+    display: flex;
+    gap: 5px;
+}
+.info > div {
+    background-color: var(--background);
+    flex-grow: 1;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-evenly;
+}
+
+.info > div > span:nth-child(1) {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.info > div > span:nth-child(2) {
+    font-weight: 600;
+    text-align: right;
+    color: var(--text-secondary);
+}
+
+.days {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.guide span:nth-child(2),
+.guide span:nth-child(4) {
+    color: var(--green);
+}
+.guide span:nth-child(1),
+.guide span:nth-child(3) {
+    color: var(--yellow);
+}
