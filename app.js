@@ -95,11 +95,12 @@ $('.galleryBut').addEventListener('click', () => {
 });
 
 let currentPos = 0;
-const moveAmount = $('.imageContain').clientWidth;
+
 let curentImageIndex = 0;
-const imageCount = 3;
+const imageCount = $('.imagesContaining').children.length;
 
 const scrollLeft = () => {
+    const moveAmount = $('.imageContain').clientWidth;
     curentImageIndex++;
     if (curentImageIndex > imageCount-1) curentImageIndex = 0;
     currentPos = moveAmount * curentImageIndex;
@@ -107,6 +108,7 @@ const scrollLeft = () => {
 };
 
 const scrollRight = () => {
+    const moveAmount = $('.imageContain').clientWidth;
     curentImageIndex--;
     if(curentImageIndex < 0) curentImageIndex = imageCount-1;
     currentPos = moveAmount * curentImageIndex;
