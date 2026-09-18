@@ -3,7 +3,7 @@
 const $ = (x) => document.querySelector(x);
 
 $(".model").addEventListener('load', ()=>{
-   $('.load').classList.add('hide')
+   $('.load').setAttribute('id', 'hide')
 });
 
 
@@ -28,6 +28,7 @@ const viewer = $('.model');
 //     console.log("FOV:", fov);
 // });
 
+
 $('.reset').addEventListener('click', ()=>{
    $('.model').cameraOrbit = "-33.5109deg 43.4712deg 79.899293m";
     $('.model').cameraTarget = "0.240415m 1.106297m -2.570210m";
@@ -35,21 +36,54 @@ $('.reset').addEventListener('click', ()=>{
 })
 
 
+// const targetDate = new Date("2026-11-13T23:59:59");
 
-const targetDate = new Date("2026-11-13T23:59:59");
+// function updateDaysLeft() {
+//     const now = new Date();
+//     const difference = targetDate - now;
 
-function updateDaysLeft() {
-    const now = new Date();
-    const difference = targetDate - now;
+//     const daysLeft = Math.max(
+//         0,
+//         Math.ceil(difference / (1000 * 60 * 60 * 24))
+//     );
 
-    const daysLeft = Math.max(
-        0,
-        Math.ceil(difference / (1000 * 60 * 60 * 24))
-    );
+//     $('.days').textContent =
+//         daysLeft.toString().replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+// }
 
-    $('.days').textContent =
-        daysLeft.toString().replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
-}
+// updateDaysLeft();
+// setInterval(updateDaysLeft, 60000);
 
-updateDaysLeft();
-setInterval(updateDaysLeft, 60000);
+$('.chngModel').addEventListener('click', changeModel);
+
+
+let currentModel = 'model-1';
+const model1 = {
+    name: './3D-Models/3D-v2.glb',
+    butText: 'مشاهده بنای سطحی'
+};
+const model2 = {
+    name: './3D-Models/3D-v2-groundFloor.glb',
+    butText: 'مشاهده بنای زیرین'
+};
+
+
+function changeModel() {
+    if ($('.model').getAttribute('src') === model1.name) {
+        $('.model').setAttribute('src', model2.name);
+        $('.chngtxt').textContent = model1.butText;
+        $('.chngModel').classList.remove('yellowButton')
+    } else if ($('.model').getAttribute('src') === model2.name) {
+        $('.model').setAttribute('src', model1.name);
+        $('.chngtxt').textContent = model2.butText;
+        $('.chngModel').classList.add('yellowButton')
+    }
+};
+
+
+$('.menuIcon').addEventListener('click', openModel);
+
+// function openModel(){
+//     $('.modelPanel').classList.remove('hide');
+//     $('.overlay').classList.remove('hidden');
+// }

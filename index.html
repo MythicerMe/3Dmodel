@@ -13,20 +13,48 @@
 </head>
 
 <body>
+   <audio autoplay loop>
+      <source src="./assets/music-veda.mp3">
+   </audio>
+
+   <div class="modelPanel hide">
+      <div class="firstRow">
+         <p>انتخاب کنید</p>
+         <i class="bi bi-x-square"></i>
+      </div>
+      <nav class="buttsinMenu">
+         <button>صفحه اصلی</button>
+         <button>کسب اطلاعات بیشتر</button>
+      </nav>
+   </div>
+   
+   <div class="overlay hidden"></div>
+
    <div class="topBar">
-      <p>پروژه ساخت مقبره شهید گمنام</p>
-      <div class="logo">
-         <img src="./assets/logo.svg" alt="مجموعه فرهنگی کافه شهدا">
+
+      <div class="menuIcon">
+         <i class="bi bi-list"></i>
+      </div>
+      <div class="part2">
+         <p>پروژه ساخت مقبره شهید گمنام در موکب عزیزم حسین (ع)</p>
+         <div class="logo">
+            <img src="./assets/logo.svg" alt="مجموعه فرهنگی کافه شهدا">
+         </div>
       </div>
    </div>
 
    <div class="modelContain">
-      <model-viewer class="model" auto-rotate src="./3D-Models/3D-v2.glb" camera-controls
+      <model-viewer class="model" src="./3D-Models/3D-v2.glb" camera-controls
          environment-image="./hdrs/citrus_orchard_road_puresky_1k.hdr" skybox-image=""
          camera-orbit="-33.51deg 43.47deg 79.8993m" camera-target="0.2404m 1.1063m -2.5702m" field-of-view="12deg">
 
          <div class="load">
-            در حال بارگزاری ...
+            <div class="loadCircle"></div>
+
+            <span id="">در حال بارگزاری</span>
+            <!-- <div class="bar">
+               <div class="inbar"></div>
+            </div> -->
          </div>
 
       </model-viewer>
@@ -47,9 +75,9 @@
       <div class="secondpanel">
 
          <div class="buttons">
-            <button class="chngModel">
+            <button class="chngModel yellowButton">
 
-               <span class="chngtxt">مشاهده بنای سطحی</span>
+               <span class="chngtxt">مشاهده بنای زیرین</span>
                <i class="bi bi-arrow-down-up"></i>
             </button>
             <button class="reset">
