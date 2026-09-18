@@ -13,9 +13,9 @@
 </head>
 
 <body>
-   <audio autoplay loop>
+   <!-- <audio autoplay loop>
       <source src="./assets/music-veda.mp3">
-   </audio>
+   </audio> -->
 
    <div class="modelPanel hide">
       <div class="firstRow">
@@ -27,7 +27,7 @@
          <button>کسب اطلاعات بیشتر</button>
       </nav>
    </div>
-   
+
    <div class="overlay hidden"></div>
 
    <div class="topBar">
@@ -60,6 +60,35 @@
       </model-viewer>
    </div>
 
+   <div class="gallery">
+      <div class="next right">
+         <i class="bi bi-caret-right-fill"></i>
+      </div>
+      <div class="next left">
+         <i class="bi bi-caret-left-fill"></i>
+      </div>
+
+      <div class="imageBar">
+
+         <div class="imagesContaining">
+         
+         <div class="imageContain">
+            <img src="./gallery-images/image-1.png" alt="تصاویر نگارخانه">
+         </div>
+
+         <div class="imageContain">
+            <img src="./gallery-images/image-2.png" alt="تصاویر نگارخانه">
+         </div>
+
+         <div class="imageContain">
+            <img src="./gallery-images/image-3.png" alt="تصاویر نگارخانه">
+         </div>
+         </div>
+
+      </div>
+
+   </div>
+
 
    <div class="panel">
       <div class="guide">
@@ -70,23 +99,33 @@
          <span>دو انگشت</span>
          <span>حرکت</span>
          کنید.
-
       </div>
-      <div class="secondpanel">
 
-         <div class="buttons">
-            <button class="chngModel yellowButton">
 
-               <span class="chngtxt">مشاهده بنای زیرین</span>
-               <i class="bi bi-arrow-down-up"></i>
-            </button>
-            <button class="reset">
 
-               <span>بازگشت به حالت اولیه</span>
-               <i class="bi bi-repeat"></i>
-            </button>
-         </div>
-         <div class="info">
+
+      <div class="buttonContainer">
+         <button class="chngModel yellowButton">
+            <span class="chngtxt">مشاهده بنای زیرین</span>
+            <i class="bi bi-arrow-down-up"></i>
+         </button>
+
+         <button class="reset">
+            <span>بازگشت به حالت اولیه</span>
+            <i class="bi bi-repeat"></i>
+         </button>
+
+         <button class="galleryBut">
+            <span class="chngtxt">نگارخانه</span>
+            <i class="bi bi-images"></i>
+         </button>
+
+         <button class="infos">
+            <span>اطلاعات بنا</span>
+            <i class="bi bi-info-square"></i>
+         </button>
+
+         <!-- <div class="info">
             <div>
                <span>طول زمین </span>
                <span>۵۰ متر</span>
@@ -99,7 +138,7 @@
                <span>عمق زمین</span>
                <span>۵ متر</span>
             </div>
-         </div>
+         </div> -->
       </div>
       <!-- <div class="Contribute">
          کسب اطلاعات بیشتر

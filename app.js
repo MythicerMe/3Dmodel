@@ -2,12 +2,11 @@
 
 const $ = (x) => document.querySelector(x);
 
-$(".model").addEventListener('load', ()=>{
-   $('.load').setAttribute('id', 'hide')
+$(".model").addEventListener('load', () => {
+    $('.load').setAttribute('id', 'hide')
 });
 
 
-const viewer = $('.model');
 
 
 // viewer.addEventListener("camera-change", () => {
@@ -29,8 +28,8 @@ const viewer = $('.model');
 // });
 
 
-$('.reset').addEventListener('click', ()=>{
-   $('.model').cameraOrbit = "-33.5109deg 43.4712deg 79.899293m";
+$('.reset').addEventListener('click', () => {
+    $('.model').cameraOrbit = "-33.5109deg 43.4712deg 79.899293m";
     $('.model').cameraTarget = "0.240415m 1.106297m -2.570210m";
     $('.model').fieldOfView = "12deg";
 })
@@ -70,10 +69,12 @@ const model2 = {
 
 function changeModel() {
     if ($('.model').getAttribute('src') === model1.name) {
+        $('.load').removeAttribute('id');
         $('.model').setAttribute('src', model2.name);
         $('.chngtxt').textContent = model1.butText;
         $('.chngModel').classList.remove('yellowButton')
     } else if ($('.model').getAttribute('src') === model2.name) {
+        $('.load').removeAttribute('id');
         $('.model').setAttribute('src', model1.name);
         $('.chngtxt').textContent = model2.butText;
         $('.chngModel').classList.add('yellowButton')
@@ -81,9 +82,37 @@ function changeModel() {
 };
 
 
-$('.menuIcon').addEventListener('click', openModel);
+// $('.menuIcon').addEventListener('click', openModel);
 
 // function openModel(){
 //     $('.modelPanel').classList.remove('hide');
 //     $('.overlay').classList.remove('hidden');
 // }
+
+$('.galleryBut').addEventListener('click', () => {
+    console.log('click');
+    $('.gallery').classList.toggle('hidden')
+});
+
+let currentPos = 0;
+const moveAmount = $('.imageContain').clientWidth;
+let curentImageIndex = 0;
+const imageCount = 3;
+
+const scrollLeft = () => {
+    curentImageIndex++;
+    if (curentImageIndex > imageCount-1) curentImageIndex = 0;
+    currentPos = moveAmount * curentImageIndex;
+    $('.imagesContaining').style.transform = `translateX(${currentPos}px)`
+};
+
+const scrollRight = () => {
+    curentImageIndex--;
+    if(curentImageIndex < 0) curentImageIndex = imageCount-1;
+    currentPos = moveAmount * curentImageIndex;
+    $('.imagesContaining').style.transform = `translateX(${currentPos}px)`
+};
+
+$('.next.left').addEventListener('click', scrollLeft);
+$('.next.right').addEventListener('click', scrollRight);
+
