@@ -372,6 +372,7 @@ button:active {
 .imagesContaining {
     display: flex;
     width: 100%;
+    transition: all 0.5s ease;
 }
 
 .imagesContaining div {
